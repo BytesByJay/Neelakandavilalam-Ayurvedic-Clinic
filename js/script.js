@@ -203,7 +203,7 @@ function animateCounter(element, target, originalText) {
 
 // Contact form functionality
 function initContactForm() {
-    const form = document.getElementById('appointment-form');
+    const form = document.getElementById('contact-form');
     
     if (form) {
         form.addEventListener('submit', handleFormSubmit);
@@ -259,16 +259,16 @@ function validateForm(formData) {
         errors.push({ field: 'phone', message: 'Please enter a valid phone number (at least 10 digits)' });
     }
     
-    // Treatment validation
-    const service = formData.get('service');
-    if (!service) {
-        errors.push({ field: 'service', message: 'Please select a treatment' });
+    // Inquiry validation
+    const inquiry = formData.get('inquiry');
+    if (!inquiry) {
+        errors.push({ field: 'inquiry', message: 'Please select an inquiry type' });
     }
     
     // Message validation
     const message = formData.get('message');
-    if (!message || message.trim().length < 10) {
-        errors.push({ field: 'message', message: 'Please provide a brief description (at least 10 characters)' });
+    if (!message || message.trim().length < 5) {
+        errors.push({ field: 'message', message: 'Please provide your message (at least 5 characters)' });
     }
     
     return errors;
@@ -308,17 +308,17 @@ function validateField(e) {
             }
             break;
             
-        case 'service':
+        case 'inquiry':
             if (!value) {
                 isValid = false;
-                message = 'Please select a treatment';
+                message = 'Please select an inquiry type';
             }
             break;
             
         case 'message':
-            if (value.length < 10) {
+            if (value.length < 5) {
                 isValid = false;
-                message = 'Message must be at least 10 characters long';
+                message = 'Message must be at least 5 characters long';
             }
             break;
     }
@@ -409,7 +409,7 @@ function submitForm(formData) {
         showSuccessMessage();
         
         // Reset form
-        document.getElementById('appointment-form').reset();
+        document.getElementById('contact-form').reset();
         
         // Reset button
         submitButton.disabled = false;
@@ -453,9 +453,9 @@ function showSuccessMessage() {
         <div style="color: #2d8f47; font-size: 4rem; margin-bottom: 1rem;">
             <i class="fas fa-check-circle"></i>
         </div>
-        <h3 style="color: #264653; margin-bottom: 1rem;">Appointment Request Sent!</h3>
+        <h3 style="color: #264653; margin-bottom: 1rem;">Message Sent Successfully!</h3>
         <p style="color: #6c757d; margin-bottom: 1.5rem; line-height: 1.6;">
-            Thank you for contacting us. We'll get back to you within 24 hours to confirm your appointment.
+            Thank you for contacting us. We'll get back to you within 24 hours to address your inquiry.
         </p>
         <button onclick="closeSuccessMessage()" style="
             background: linear-gradient(135deg, #2d8f47, #52b788);
