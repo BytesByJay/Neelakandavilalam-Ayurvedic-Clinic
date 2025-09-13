@@ -165,12 +165,57 @@ p {
     padding: 0 20px;
 }
 
-.nav-logo h1 {
-    font-size: 1.3rem;
+.nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.logo-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    background: var(--gradient-primary);
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.logo-icon img {
+  height: 60px;             /* Adjust to the size you want */
+  width: auto;              /* Maintain aspect ratio */
+  display: block;           /* Removes extra bottom space */
+}
+
+.logo-icon i {
+    font-size: 1.5rem;
+    color: white;
+}
+
+.logo-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.logo-text h1 {
+    font-size: 1.4rem;
     color: var(--primary-color);
     font-weight: 700;
-    line-height: 1.2;
+    line-height: 1.1;
     margin: 0;
+    font-family: 'Merriweather', serif;
+}
+
+.logo-text .tagline {
+    font-size: 0.85rem;
+    color: var(--text-light);
+    font-style: italic;
+    line-height: 1;
+    margin: 2px 0 0 0;
+    font-weight: 600;
+    letter-spacing: 0.3px;
 }
 
 .nav-menu {
@@ -536,6 +581,7 @@ p {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: top; 
     transition: transform 0.3s ease;
 }
 
@@ -1022,9 +1068,26 @@ p {
         padding: 1.5rem;
     }
 
-    .nav-logo h1 {
-        font-size: 1rem;
+    .nav-logo {
+        gap: 0.8rem;
+    }
+    
+    .logo-icon {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .logo-icon i {
+        font-size: 1.2rem;
+    }
+    
+    .logo-text h1 {
+        font-size: 1.1rem;
         line-height: 1.1;
+    }
+    
+    .logo-text .tagline {
+        font-size: 0.65rem;
     }
 }
 
