@@ -209,7 +209,7 @@ p {
 }
 
 .logo-text .tagline {
-    font-size: 0.85rem;
+    font-size: 0.95rem;
     color: var(--text-light);
     font-style: italic;
     line-height: 1;
@@ -1087,7 +1087,7 @@ p {
     }
     
     .logo-text .tagline {
-        font-size: 0.65rem;
+        font-size: 0.75rem;
     }
 }
 
