@@ -538,6 +538,33 @@ function preloadImages() {
 // Call preload function
 preloadImages();
 
+// WhatsApp functionality
+function initWhatsApp() {
+    const whatsappFloat = document.getElementById('whatsapp-float');
+    
+    // Show/hide WhatsApp button based on scroll
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 300) {
+            whatsappFloat.style.opacity = '1';
+            whatsappFloat.style.visibility = 'visible';
+        } else {
+            whatsappFloat.style.opacity = '0.7';
+        }
+    });
+    
+    // WhatsApp button click tracking
+    const whatsappButtons = document.querySelectorAll('.whatsapp-button, .whatsapp-link');
+    whatsappButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            // Track WhatsApp button clicks (you can add analytics here)
+            console.log('WhatsApp enquiry initiated');
+        });
+    });
+}
+
+// Initialize WhatsApp functionality
+initWhatsApp();
+
 // Add keyboard navigation support
 document.addEventListener('keydown', function(e) {
     // ESC key to close mobile menu
