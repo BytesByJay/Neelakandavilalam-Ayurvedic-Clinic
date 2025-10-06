@@ -881,6 +881,12 @@ p {
     line-height: 1.5;
 }
 
+.contact-map {
+    border-radius: 20px;
+    box-shadow: 0 10px 30px var(--shadow-light);
+    overflow: hidden;
+}
+
 /* Contact Form */
 .contact-form {
     background: var(--bg-light);
